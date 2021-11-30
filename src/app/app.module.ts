@@ -6,7 +6,14 @@ import { AppComponent } from './app.component'
 import { AcceptedPageComponent } from './screens/accepted-page/accepted-page.component'
 import { ConfirmPaymentComponent } from './screens/confirm-payment/confirm-payment.component'
 import { PaymentDetailsComponent } from './screens/payment-details/payment-details.component'
-import { ProductDetailsComponent } from './screens/product-details/product-details.component'
+import { ProductDetailsComponent } from './screens/product-details/product-details.component';
+import { ButtonComponent } from './components/button/button.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { ColorsComponent } from './components/colors/colors.component';
+import { PaymentMethodComponent } from './components/payment-method/payment-method.component';
+import { ProductComponent } from './components/product/product.component';
+import { SizesComponent } from './components/sizes/sizes.component';
+import { DotsComponent } from './components/dots/dots.component'
 
 @NgModule({
 	declarations: [
@@ -14,7 +21,14 @@ import { ProductDetailsComponent } from './screens/product-details/product-detai
 		ProductDetailsComponent,
 		PaymentDetailsComponent,
 		ConfirmPaymentComponent,
-		AcceptedPageComponent
+		AcceptedPageComponent,
+  ButtonComponent,
+  CarouselComponent,
+  ColorsComponent,
+  PaymentMethodComponent,
+  ProductComponent,
+  SizesComponent,
+  DotsComponent
 	],
 	imports: [BrowserModule, AppRoutingModule],
 	providers: [],
