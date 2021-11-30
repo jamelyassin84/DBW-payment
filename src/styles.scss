@@ -9,6 +9,13 @@
 body,
 html {
 	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.col-md-12 {
+	padding: 0 !important;
+	padding-right: 0 !important;
 }
 
 .bold {

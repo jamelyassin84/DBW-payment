@@ -1,0 +1,19 @@
+.carousel-cotainer {
+	padding: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	padding-right: 0;
+	width: 100%;
+	img {
+		height: 60px;
+		width: 80px;
+		object-fit: contain;
+		background: #f5f5f5;
+		margin-right: 1rem;
+		border-radius: 15px;
+		border: 2px solid transparent;
+		&:hover {
+			border: 2px solid #2e70e6;
+		}
+	}
+}
