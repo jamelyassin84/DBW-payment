@@ -1,10 +1,36 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
+import { AcceptedPageComponent } from './screens/accepted-page/accepted-page.component'
+import { ConfirmPaymentComponent } from './screens/confirm-payment/confirm-payment.component'
+import { PaymentDetailsComponent } from './screens/payment-details/payment-details.component'
+import { ProductDetailsComponent } from './screens/product-details/product-details.component'
 
-const routes: Routes = [];
+const routes: Routes = [
+	{
+		path: '',
+		redirectTo: 'product-details',
+		pathMatch: 'full'
+	},
+	{
+		path: 'product-details',
+		component: ProductDetailsComponent
+	},
+	{
+		path: 'payment-details',
+		component: PaymentDetailsComponent
+	},
+	{
+		path: 'confirm-payment',
+		component: ConfirmPaymentComponent
+	},
+	{
+		path: 'accepted-page',
+		component: AcceptedPageComponent
+	}
+]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
