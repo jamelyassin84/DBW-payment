@@ -34,6 +34,8 @@ html {
 	overflow-x: hidden;
 	margin-top: 20px;
 	padding-top: 0;
+	min-height: 812px;
+	margin-bottom: 20px;
 }
 .col-md-12 {
 	padding: 0 !important;
@@ -87,5 +89,24 @@ html {
 		border: none;
 		box-shadow: none;
 		outline: 0 !important;
+	}
+}
+
+.form-group {
+	label {
+		font-family: bold;
+		font-size: 14px;
+		color: #5f6a84;
+	}
+	.form-control {
+		border-radius: 10px;
+		padding: 16px 20px;
+		font-size: 15px;
+		color: #000f34;
+		font-family: bold;
+	}
+
+	*:focus {
+		outline: 2px solid #2e70e6;
 	}
 }

@@ -1,0 +1,36 @@
+.product-details {
+	border-radius: 12px;
+	padding: 26px 15px;
+	display: flex;
+	background: #f4f4f4;
+	padding-bottom: 10px;
+	img {
+		height: 85px;
+		width: 100px;
+		object-fit: contain;
+		margin-right: 17px;
+	}
+}
+
+.information {
+	.product-title {
+		font-family: bold;
+		font-size: 16px;
+	}
+	.brief-description {
+		font-size: 12px;
+		margin-bottom: 6px;
+	}
+	.price-and-size-container {
+		font-size: 13px;
+		.price {
+			font-family: bold;
+			font-size: 13px;
+		}
+		.size {
+			font-family: bold;
+			font-size: 13px;
+			margin-left: 30px;
+		}
+	}
+}
