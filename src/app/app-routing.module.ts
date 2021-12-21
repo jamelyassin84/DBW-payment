@@ -24,7 +24,7 @@ const routes: Routes = [
 		component: ConfirmPaymentComponent
 	},
 	{
-		path: 'accepted-page',
+		path: 'order-has-been-accepted',
 		component: AcceptedPageComponent
 	}
 ]
