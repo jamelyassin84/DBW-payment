@@ -22,6 +22,7 @@ export class VariantsComponent implements OnInit {
 		}
 		for (let index = 0; index < this.selectedVariants.length; index++) {
 			if (this.selectedVariants[index].variant == title) {
+				alert('delete')
 				this.selectedVariants.splice(index, 2)
 				this.types.splice(index, 2)
 				this.selectedVariants.push(data)
