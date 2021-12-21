@@ -6,3 +6,31 @@
 	font-family: bold;
 	font-size: 16px;
 }
+
+.separator {
+	margin: 25px 0;
+	border-top: 1px solid rgba($color: #dddddd, $alpha: 0.5);
+}
+
+.payment-method {
+	display: flex;
+}
+
+.item {
+	margin-bottom: 16px;
+	display: flex;
+	.type {
+		color: #130d25;
+		font-size: 14px;
+		font-family: bold;
+	}
+	.value {
+		margin-left: auto;
+		color: #727788;
+		font-size: 14px;
+	}
+}
+
+.btn {
+	margin-top: calc(75px - 16px);
+}
