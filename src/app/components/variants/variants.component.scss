@@ -16,15 +16,17 @@
 	font-size: 16px;
 	background: #e8eaef;
 	word-break: keep-all;
-	margin: 4.5px;
 	margin-left: 0px;
 	display: inline-block;
+	margin-right: 9px;
+	margin-top: 7px;
 	cursor: pointer;
-	border: 1px solid transparent;
 	&:hover {
-		border: 1px solid #2e70e6;
+		outline: 2px solid #2e70e6;
 	}
 	&:active {
+		color: white;
 		transform: scale(0.99);
+		background: #2e70e6;
 	}
 }
