@@ -78,10 +78,14 @@ html {
 	border: none;
 	display: flex;
 	&:hover {
-		box-shadow: -5px 5px 5px rgba($color: #2e70e6, $alpha: 0.2);
 		transform: scale(1.01);
 	}
 	&:active {
 		transform: scale(0.99);
+	}
+	&:focus {
+		border: none;
+		box-shadow: none;
+		outline: 0 !important;
 	}
 }

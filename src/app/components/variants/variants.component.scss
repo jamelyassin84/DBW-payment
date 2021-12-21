@@ -1,0 +1,30 @@
+.variant {
+	font-size: 16px;
+	font-family: bold;
+	margin-top: 19px;
+}
+
+.variant-container {
+	display: inline-block;
+	max-width: 90%;
+}
+
+.variants {
+	padding: 8px 14px;
+	font-family: bold;
+	border-radius: 8px;
+	font-size: 16px;
+	background: #e8eaef;
+	word-break: keep-all;
+	margin: 4.5px;
+	margin-left: 0px;
+	display: inline-block;
+	cursor: pointer;
+	border: 1px solid transparent;
+	&:hover {
+		border: 1px solid #2e70e6;
+	}
+	&:active {
+		transform: scale(0.99);
+	}
+}

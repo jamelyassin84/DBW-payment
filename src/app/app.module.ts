@@ -13,7 +13,8 @@ import { ColorsComponent } from './components/colors/colors.component';
 import { PaymentMethodComponent } from './components/payment-method/payment-method.component';
 import { ProductComponent } from './components/product/product.component';
 import { SizesComponent } from './components/sizes/sizes.component';
-import { DotsComponent } from './components/dots/dots.component'
+import { DotsComponent } from './components/dots/dots.component';
+import { VariantsComponent } from './components/variants/variants.component'
 
 @NgModule({
 	declarations: [
@@ -28,7 +29,8 @@ import { DotsComponent } from './components/dots/dots.component'
   PaymentMethodComponent,
   ProductComponent,
   SizesComponent,
-  DotsComponent
+  DotsComponent,
+  VariantsComponent
 	],
 	imports: [BrowserModule, AppRoutingModule],
 	providers: [],

@@ -1,0 +1,8 @@
+<div *ngFor="let item of variants">
+	<div class="variant title">{{ item.variant }} :</div>
+	<div class="variant-container">
+		<div class="title variants" *ngFor="let type of item.variants">
+			{{ type }}
+		</div>
+	</div>
+</div>
