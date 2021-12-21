@@ -5,7 +5,7 @@ export type Product = {
 	currency: string
 	price: number
 	user_id: number
-	variants?: string
+	variants?: string | any
 	discounted_price?: number
 
 	'image-url'?: string
