@@ -15,9 +15,10 @@
 		background: #f5f5f5;
 		margin-right: 0.9rem;
 		border-radius: 15px;
+		border: 2px solid transparent;
 		cursor: pointer;
 		&:hover {
-			outline: 2px solid #2e70e6;
+			border: 2px solid #2e70e6;
 		}
 	}
 }

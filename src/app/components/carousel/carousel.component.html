@@ -1,6 +1,4 @@
 <div class="carousel-cotainer ml-2">
-	<img src="../../../assets//images/nike1.png" alt="" />
-	<img src="../../../assets//images/nike2.png" alt="" />
-	<img src="../../../assets//images/nike3.png" alt="" />
-	<img src="../../../assets//images/nike4.png" alt="" />
+	<img [src]="first" alt="" />
+	<img *ngFor="let image of images" [src]="image.url" alt="" />
 </div>

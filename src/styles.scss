@@ -121,3 +121,15 @@ html {
 		transform: scale(0.99);
 	}
 }
+
+@media only screen and (max-width: 480px) {
+	body,
+	html {
+		background: white;
+	}
+
+	.screen {
+		height: auto;
+		border: none;
+	}
+}

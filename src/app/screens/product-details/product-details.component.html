@@ -1,24 +1,34 @@
 <div class="screen">
-	<div class="container">
+	<div class="container" *ngIf="product !== undefined">
 		<div class="row">
 			<div class="col-md-12">
 				<img
 					class="big-img w-100"
-					src="../../../assets/images/nike1.png"
+					[src]="product['image-url']"
 					alt=""
 				/>
-				<app-carousel></app-carousel>
+				<app-carousel
+					[first]="product['image-url']"
+					[images]="product.photos"
+				></app-carousel>
 
 				<div class="description-container ml-2 mt-0">
 					<span class="badge badge-warning text-white">New</span>
 
-					<div class="product-title">Nike Blue Precision Iv</div>
+					<div class="product-title">{{ product.product_name }}</div>
 
-					<div class="sub-title muted">Unisex Basketball Shoes</div>
+					<div class="sub-title muted">
+						{{ product.brief_description }}
+					</div>
 
 					<div class="price-container">
-						<span class="price title">$ 74</span>
-						<span class="discounted-price text">$ 74</span>
+						<span class="price title"
+							>{{ product.currency }} {{ product.price }}</span
+						>
+						<span class="discounted-price text"
+							>{{ product.currency }}
+							{{ product.discounted_price }}</span
+						>
 					</div>
 
 					<app-variants></app-variants>
@@ -26,12 +36,7 @@
 					<div class="title description">Description</div>
 
 					<div class="text description-text">
-						A pair of blue basketball sports shoes, has mid-top
-						styling, lace-up detail Lightweight knit material with a
-						low-cut collar provides a secure, supportive fit while
-						maintainin ankle mobility. A multi-directional outsole
-						pattern with rubber wrapped up the sides helps you grip
-						the court.
+						{{ product.description }}
 					</div>
 
 					<button

@@ -8,7 +8,8 @@ import { Component, Input, OnInit } from '@angular/core'
 export class CarouselComponent implements OnInit {
 	constructor() {}
 
-	@Input() images: string[] | any
+	@Input() images: any[] | any
+	@Input() first: any
 
 	ngOnInit(): void {}
 }
