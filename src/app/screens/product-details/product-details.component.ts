@@ -25,9 +25,6 @@ export class ProductDetailsComponent implements OnInit {
 	ngOnInit(): void {
 		const slug: any = this.route.snapshot.paramMap.get('id')
 		this.getProduct(slug)
-		setInterval(() => {
-			this.title.setTitle(this.AppTitle)
-		}, 400)
 	}
 
 	getProduct(slug: string): void {
@@ -36,8 +33,16 @@ export class ProductDetailsComponent implements OnInit {
 			this.image = product['image-url']
 
 			setInterval(() => {
-				this.title.setTitle(sentincify(product.slug))
-			}, 400)
+				this.title.setTitle(
+					`${this.AppTitle}  | ${sentincify(product.slug)}`
+				)
+			}, 2000)
+
+			setTimeout(() => {
+				setInterval(() => {
+					this.title.setTitle(`Payment made easier @${this.AppTitle}`)
+				}, 2000)
+			}, 2000)
 		})
 	}
 
