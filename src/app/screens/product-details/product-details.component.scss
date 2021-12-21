@@ -14,6 +14,8 @@
 	border-radius: 5px;
 	background: #ffb100;
 	padding: 3px 8px;
+	padding-top: 4px;
+	margin-bottom: -10px;
 }
 
 .product-title {
@@ -49,8 +51,12 @@
 	font-size: 15px;
 	line-height: 26px;
 	padding-right: 23px;
+	max-width: 734px;
 }
 
 .button {
 	margin-top: 25px;
+	img {
+		max-height: 50px;
+	}
 }

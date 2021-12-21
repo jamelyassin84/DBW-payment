@@ -14,6 +14,7 @@
 
 .container {
 	padding: 0 !important;
+	max-width: 420px;
 }
 
 body,
@@ -59,8 +60,18 @@ html {
 }
 
 .touchable {
-	padding: 0;
+	padding: 0 !important;
 	margin: 0;
 	background: none;
 	padding-right: 28px;
+	outline: 0 !important;
+	box-shadow: none;
+	border: none;
+	&:hover {
+		box-shadow: -5px 5px 5px rgba($color: #2e70e6, $alpha: 0.2);
+		transform: scale(1.01);
+	}
+	&:active {
+		transform: scale(0.99);
+	}
 }
