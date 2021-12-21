@@ -110,3 +110,14 @@ html {
 		outline: 2px solid #2e70e6;
 	}
 }
+
+.btn-primary {
+	height: 50px;
+	border-radius: 10px;
+	width: 100%;
+	font-weight: bold;
+	background: #2e70e6;
+	&:active {
+		transform: scale(0.99);
+	}
+}
