@@ -1,5 +1,15 @@
+@font-face {
+	font-family: 'bold';
+	src: url('./assets/fonts/Montserrat-bold.ttf');
+}
+
+@font-face {
+	font-family: 'normal';
+	src: url('./assets/fonts/Montserrat-Regular.ttf');
+}
+
 * {
-	font-family: 'Montserrat';
+	font-family: normal;
 }
 
 .container {
@@ -11,6 +21,7 @@ html {
 	padding: 0;
 	height: 100%;
 	width: 100%;
+	overflow-x: hidden;
 }
 
 .col-md-12 {
@@ -30,20 +41,26 @@ html {
 	align-items: center;
 }
 
-.product-title {
-	font-weight: 900;
-}
-
 .title {
-}
-
-.sub-title {
-}
-
-.normal {
+	color: #130d25;
 }
 
 .badge-warning {
 	background-color: #ffb100;
 	font-weight: 200;
+}
+
+.muted {
+	color: #727788;
+}
+
+.text {
+	color: #5f6a84 !important;
+}
+
+.touchable {
+	padding: 0;
+	margin: 0;
+	background: none;
+	padding-right: 28px;
 }
