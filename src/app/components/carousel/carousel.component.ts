@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 
 @Component({
 	selector: 'app-carousel',
@@ -10,6 +10,17 @@ export class CarouselComponent implements OnInit {
 
 	@Input() images: any[] | any
 	@Input() first: any
+	@Output() onSelect: any = new EventEmitter()
 
-	ngOnInit(): void {}
+	imageToShow: any
+	index: number = 0
+
+	ngOnInit(): void {
+		this.imageToShow = this.first
+	}
+
+	changeImage(image: any, index: number) {
+		this.onSelect.emit(image)
+		this.index = index
+	}
 }

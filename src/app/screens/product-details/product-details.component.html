@@ -2,12 +2,9 @@
 	<div class="container" *ngIf="product !== undefined">
 		<div class="row">
 			<div class="col-md-12">
-				<img
-					class="big-img w-100"
-					[src]="product['image-url']"
-					alt=""
-				/>
+				<img class="big-img w-100" [src]="image" alt="" />
 				<app-carousel
+					(onSelect)="changeImage($event)"
 					[first]="product['image-url']"
 					[images]="product.photos"
 				></app-carousel>

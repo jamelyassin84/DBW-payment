@@ -1,4 +1,16 @@
 <div class="carousel-cotainer ml-2">
-	<img [src]="first" alt="" />
-	<img *ngFor="let image of images" [src]="image.url" alt="" />
+	<img
+		class="active"
+		[class.active]="index == 0"
+		(click)="changeImage(first, 0)"
+		[src]="first"
+		alt=""
+	/>
+	<img
+		[class.active]="index == i + 1"
+		*ngFor="let image of images; let i = index"
+		[src]="image.url"
+		alt=""
+		(click)="changeImage(image.url, i + 1)"
+	/>
 </div>

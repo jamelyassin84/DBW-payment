@@ -18,7 +18,11 @@
 		border: 2px solid transparent;
 		cursor: pointer;
 		&:hover {
-			border: 2px solid #2e70e6;
+			border: 2px solid rgba($color: gray, $alpha: 0.5);
 		}
 	}
+}
+
+.active {
+	border: 2px solid rgba($color: #2e70e6, $alpha: 1) !important;
 }
