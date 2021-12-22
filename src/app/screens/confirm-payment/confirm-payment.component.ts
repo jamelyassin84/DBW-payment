@@ -1,3 +1,4 @@
+import { CheckOutService } from './../../services/check-out.service'
 import { Component, OnInit } from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { Router } from '@angular/router'
@@ -11,7 +12,11 @@ import { Variant } from 'src/app/models/Variant.type'
 	styleUrls: ['./confirm-payment.component.scss']
 })
 export class ConfirmPaymentComponent implements OnInit {
-	constructor(private router: Router, private title: Title) {
+	constructor(
+		private router: Router,
+		private title: Title,
+		private service: CheckOutService
+	) {
 		let extras: any = this.router.getCurrentNavigation()?.extras.state
 		if (extras === undefined) {
 			extras = JSON.parse(localStorage.getItem('extras') + '')
@@ -33,6 +38,10 @@ export class ConfirmPaymentComponent implements OnInit {
 	}
 
 	makePayment() {
-		console.log(this.buyerDetails)
+		this.service
+			.create(this.buyerDetails)
+			.subscribe((buyerDetails: BuyerDetails) => {
+				console.log(buyerDetails)
+			})
 	}
 }

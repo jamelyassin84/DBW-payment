@@ -16,18 +16,18 @@
 	<div class="content-title title">Payment Method</div>
 
 	<div class="payment-method">
-		<app-payment-method
+		<!-- <app-payment-method
 			[svg]="paypal"
+			[isActive]="true"
+		></app-payment-method> -->
+
+		<app-payment-method
+			[svg]="apple"
 			[isActive]="true"
 		></app-payment-method>
 
 		<app-payment-method
 			[svg]="visa"
-			[isActive]="false"
-		></app-payment-method>
-
-		<app-payment-method
-			[svg]="apple"
 			[isActive]="false"
 		></app-payment-method>
 	</div>
