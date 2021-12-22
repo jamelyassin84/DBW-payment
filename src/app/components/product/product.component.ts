@@ -15,7 +15,5 @@ export class ProductComponent implements OnInit {
 	@Input() variants: any
 	@Input() currency: any
 
-	ngOnInit(): void {
-		console.log(this.variants)
-	}
+	ngOnInit(): void {}
 }

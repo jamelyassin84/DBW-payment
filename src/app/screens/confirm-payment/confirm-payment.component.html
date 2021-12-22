@@ -1,5 +1,17 @@
 <div class="screen">
-	<app-product></app-product>
+	<app-product
+		*ngIf="product !== undefined"
+		[image]="product['image-url']"
+		[title]="product.product_name"
+		[brief_description]="product.brief_description"
+		[currency]="product.currency"
+		[variants]="chosenVariants"
+		[price]="
+			product.discounted_price === null
+				? product.price
+				: product.discounted_price
+		"
+	></app-product>
 
 	<div class="content-title title">Payment Method</div>
 
@@ -42,9 +54,11 @@
 		<span class="value">235</span>
 	</div>
 
-	<button routerLink="/order-has-been-accepted" class="btn btn-primary">
+	<button (click)="makePayment()" class="btn btn-primary">
 		Make Payment
 	</button>
+
+	<!-- routerLink="/order-has-been-accepted"  -->
 </div>
 
 <ng-template #paypal>

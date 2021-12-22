@@ -32,7 +32,16 @@ export class PaymentDetailsComponent implements OnInit {
 	product: Product | undefined | any = undefined
 	chosenVariants!: Variant[] | any
 
-	buyerDetails: BuyerDetails | any = {}
+	buyerDetails: BuyerDetails | any = {
+		name: '',
+		email: '',
+		mobile: '',
+		address: '',
+		city: '',
+		country: '',
+		zipCode: '',
+		landMark: ''
+	}
 
 	ngOnInit(): void {}
 
@@ -45,6 +54,7 @@ export class PaymentDetailsComponent implements OnInit {
 
 	submitForm() {
 		this.buyerDetails.product = this.product
+		this.buyerDetails.chosenVariants = this.chosenVariants
 		this.router.navigate(['/confirm-payment'], { state: this.buyerDetails })
 	}
 }
