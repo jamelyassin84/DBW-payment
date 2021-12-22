@@ -1,11 +1,13 @@
 <div class="product-details">
-	<img src="../../../assets/images/nike1.png" alt="" />
+	<img [src]="image" alt="" />
 	<div class="information">
-		<div class="title product-title">Nike PRECISION IV</div>
-		<div class="brief-description muted">Unisex Basketball Shoes</div>
+		<div class="title product-title">{{ title }}</div>
+		<div class="brief-description muted">{{ brief_description }}</div>
 		<div class="price-and-size-container">
-			<span class="price title">$ 74</span>
-			<span class="size title">Size : 37 US</span>
+			<div *ngFor="let variant of variants" class="size title">
+				{{ variant.variant }} : {{ variant.variants }}
+			</div>
+			<span class="price title">{{ currency }} {{ price }}</span>
 		</div>
 	</div>
 </div>

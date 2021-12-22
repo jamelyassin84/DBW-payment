@@ -57,7 +57,7 @@ export class ProductDetailsComponent implements OnInit {
 
 	next() {
 		let data: any = {
-			id: this.product.id
+			slug: this.product.slug
 		}
 		if (this.product.chosenVariants) {
 			data.chosenVariants = this.product.chosenVariants
