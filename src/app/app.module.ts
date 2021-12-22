@@ -16,6 +16,7 @@ import { SizesComponent } from './components/sizes/sizes.component'
 import { DotsComponent } from './components/dots/dots.component'
 import { VariantsComponent } from './components/variants/variants.component'
 import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
 	declarations: [
@@ -33,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http'
 		DotsComponent,
 		VariantsComponent
 	],
-	imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+	imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
 	providers: [],
 	bootstrap: [AppComponent]
 })

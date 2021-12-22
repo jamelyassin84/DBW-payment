@@ -62,6 +62,6 @@ export class ProductDetailsComponent implements OnInit {
 		if (this.product.chosenVariants) {
 			data.chosenVariants = this.product.chosenVariants
 		}
-		this.router.navigate(['payment-details'], { state: data })
+		this.router.navigate(['/payment-details'], { state: data })
 	}
 }

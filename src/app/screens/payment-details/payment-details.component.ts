@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { ActivatedRoute, Router } from '@angular/router'
+import { sentincify } from 'src/app/constants/helpers'
+import { BuyerDetails } from 'src/app/models/BuyerDetails.type'
 import { Product } from 'src/app/models/Product.type'
 import { Variant } from 'src/app/models/Variant.type'
 import { ProductsService } from 'src/app/services/products.service'
@@ -30,14 +32,19 @@ export class PaymentDetailsComponent implements OnInit {
 	product: Product | undefined | any = undefined
 	chosenVariants!: Variant[] | any
 
+	buyerDetails: BuyerDetails | any = {}
+
 	ngOnInit(): void {}
 
 	getProduct(slug: string): void {
 		this.service.show(slug).subscribe((product: Product) => {
 			this.product = product
-			// this.title.setTitle(
-			//     `${this.AppTitle}  | ${sentincify(product.slug)}`
-			// )
+			this.title.setTitle(sentincify(product.product_name))
 		})
+	}
+
+	submitForm() {
+		this.buyerDetails.product = this.product
+		this.router.navigate(['/confirm-payment'], { state: this.buyerDetails })
 	}
 }

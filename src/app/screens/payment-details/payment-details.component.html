@@ -17,45 +17,78 @@
 
 	<div class="form-group">
 		<label>Full name</label>
-		<input type="text" class="form-control" />
-	</div>
-
-	<div class="form-group">
-		<label>Email</label>
-		<input type="text" class="form-control" />
+		<input
+			[(ngModel)]="buyerDetails.name"
+			type="text"
+			class="form-control"
+		/>
 	</div>
 
 	<div class="form-group">
 		<label>Mobile</label>
-		<input placeholder="+97100-000-0000" type="text" class="form-control" />
+		<input
+			[(ngModel)]="buyerDetails.mobile"
+			placeholder="+97100-000-0000"
+			type="text"
+			class="form-control"
+		/>
+	</div>
+
+	<div class="form-group">
+		<label>Email</label>
+		<input
+			[(ngModel)]="buyerDetails.email"
+			type="text"
+			class="form-control"
+		/>
 	</div>
 
 	<div class="content-title title">Shipping Address</div>
 
 	<div class="form-group">
-		<label>Address / Flat no. / villa no./ Street</label>
-		<input type="text" class="form-control" />
+		<label>Country</label>
+		<input
+			[(ngModel)]="buyerDetails.address"
+			type="text"
+			class="form-control"
+		/>
 	</div>
 
 	<div class="form-group">
 		<label>City</label>
-		<input type="text" class="form-control" />
+		<input
+			[(ngModel)]="buyerDetails.city"
+			type="text"
+			class="form-control"
+		/>
 	</div>
 
 	<div class="form-group">
-		<label>Country</label>
-		<input type="text" class="form-control" />
-	</div>
-
-	<div class="form-group">
-		<label>ZIP Code</label>
-		<input type="text" class="form-control" />
+		<label>Address / Flat no. / villa no./ Street</label>
+		<input
+			[(ngModel)]="buyerDetails.address"
+			type="text"
+			class="form-control"
+		/>
 	</div>
 
 	<div class="form-group">
 		<label>Land mark</label>
-		<input type="text" class="form-control" />
+		<input
+			[(ngModel)]="buyerDetails.landMark"
+			type="text"
+			class="form-control"
+		/>
 	</div>
 
-	<button routerLink="/confirm-payment" class="btn btn-primary">Next</button>
+	<div class="form-group">
+		<label>ZIP Code</label>
+		<input
+			[(ngModel)]="buyerDetails.zipCode"
+			type="text"
+			class="form-control"
+		/>
+	</div>
+
+	<button (click)="submitForm()" class="btn btn-primary">Next</button>
 </div>

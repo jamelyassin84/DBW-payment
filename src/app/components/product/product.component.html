@@ -7,7 +7,9 @@
 			<div *ngFor="let variant of variants" class="size title">
 				{{ variant.variant }} : {{ variant.variants }}
 			</div>
-			<span class="price title">{{ currency }} {{ price }}</span>
+			<span class="price title">
+				{{ currency }} {{ price | currency }}
+			</span>
 		</div>
 	</div>
 </div>
