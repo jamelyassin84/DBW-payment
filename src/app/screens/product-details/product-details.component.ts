@@ -1,7 +1,7 @@
 import { ProductsService } from './../../services/products.service'
 import { Component, OnInit } from '@angular/core'
 import { Product } from 'src/app/models/Product.type'
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 import { Title } from '@angular/platform-browser'
 import { sentincify } from 'src/app/constants/helpers'
 
@@ -14,10 +14,11 @@ export class ProductDetailsComponent implements OnInit {
 	constructor(
 		private service: ProductsService,
 		private route: ActivatedRoute,
-		private title: Title
+		private title: Title,
+		private router: Router
 	) {}
 
-	product: Product | undefined = undefined
+	product: Product | undefined | any = undefined
 	image: string | any
 
 	AppTitle = 'Rive'
@@ -36,17 +37,31 @@ export class ProductDetailsComponent implements OnInit {
 				this.title.setTitle(
 					`${this.AppTitle}  | ${sentincify(product.slug)}`
 				)
-			}, 2000)
+			}, 1000)
 
 			setTimeout(() => {
 				setInterval(() => {
 					this.title.setTitle(`Payment made easier @${this.AppTitle}`)
-				}, 2000)
-			}, 2000)
+				}, 4000)
+			}, 4000)
 		})
 	}
 
 	changeImage(image: string) {
 		this.image = image
+	}
+
+	setChosenVariants(variants: any) {
+		this.product.chosenVariants = variants
+	}
+
+	next() {
+		let data: any = {
+			id: this.product.id
+		}
+		if (this.product.chosenVariants) {
+			data.chosenVariants = this.product.chosenVariants
+		}
+		this.router.navigate(['payment-details'], { state: data })
 	}
 }

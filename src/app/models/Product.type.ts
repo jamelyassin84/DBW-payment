@@ -14,4 +14,5 @@ export type Product = {
 	slug?: string
 	created_at?: any
 	updated_at?: any
+	chosenVariants?: any
 }

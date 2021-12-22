@@ -28,7 +28,10 @@
 						>
 					</div>
 
-					<app-variants [variants]="product.variants"></app-variants>
+					<app-variants
+						(onSelect)="setChosenVariants($event)"
+						[variants]="product.variants"
+					></app-variants>
 
 					<div class="title description">Description</div>
 
@@ -36,10 +39,7 @@
 						{{ product.description }}
 					</div>
 
-					<button
-						routerLink="/payment-details"
-						class="btn btn-primary"
-					>
+					<button (click)="next()" class="btn btn-primary">
 						Next
 					</button>
 				</div>

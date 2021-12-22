@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core'
 
 @Component({
 	selector: 'app-variants',
@@ -12,6 +12,8 @@ export class VariantsComponent implements OnInit {
 
 	selectedVariants: any[] = []
 
+	@Output() onSelect: any = new EventEmitter()
+
 	ngOnInit(): void {}
 
 	types: any[] = []
@@ -22,7 +24,6 @@ export class VariantsComponent implements OnInit {
 		}
 		for (let index = 0; index < this.selectedVariants.length; index++) {
 			if (this.selectedVariants[index].variant == title) {
-				alert('delete')
 				this.selectedVariants.splice(index, 2)
 				this.types.splice(index, 2)
 				this.selectedVariants.push(data)
@@ -36,8 +37,6 @@ export class VariantsComponent implements OnInit {
 			this.selectedVariants.push(data)
 			this.types.push(variant)
 		}
-
-		console.log(this.selectedVariants)
-		// console.log(this.types)
+		this.onSelect.emit(this.selectedVariants)
 	}
 }
