@@ -16,11 +16,6 @@
 	<div class="content-title title">Payment Method</div>
 
 	<div class="payment-method">
-		<!-- <app-payment-method
-			[svg]="paypal"
-			[isActive]="true"
-		></app-payment-method> -->
-
 		<app-payment-method
 			[svg]="apple"
 			[isActive]="true"
@@ -36,91 +31,49 @@
 
 	<div class="item">
 		<span class="type">Card number</span>
-		<span class="value">34534 7455 3456 5422</span>
+		<span class="value"
+			><input
+				[(ngModel)]="cardToken.number"
+				type="number"
+				class="form-control"
+		/></span>
 	</div>
 
 	<div class="item">
-		<span class="type">Name on card</span>
-		<span class="value">Abdus Salam</span>
+		<span class="type">Expiry Month</span>
+		<span class="value"
+			><input
+				[(ngModel)]="cardToken.exp_month"
+				type="text"
+				class="form-control"
+		/></span>
 	</div>
 
 	<div class="item">
-		<span class="type">Expiry Date</span>
-		<span class="value">12/24</span>
+		<span class="type">Expiry Year</span>
+		<span class="value"
+			><input
+				[(ngModel)]="cardToken.exp_year"
+				type="number"
+				class="form-control"
+		/></span>
 	</div>
 
 	<div class="item">
-		<span class="type">CVV</span>
-		<span class="value">235</span>
+		<span class="type">CVC</span>
+		<span class="value"
+			><input
+				[(ngModel)]="cardToken.cvc"
+				type="text"
+				class="form-control"
+		/></span>
 	</div>
 
 	<button (click)="makePayment()" class="btn btn-primary">
 		Make Payment
 	</button>
-
-	<!-- routerLink="/order-has-been-accepted"  -->
 </div>
 
-<ng-template #paypal>
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		xmlns:xlink="http://www.w3.org/1999/xlink"
-		width="114"
-		height="86"
-		viewBox="0 0 114 86"
-	>
-		<defs>
-			<filter
-				id="Background"
-				x="0"
-				y="0"
-				width="114"
-				height="86"
-				filterUnits="userSpaceOnUse"
-			>
-				<feOffset dy="2" input="SourceAlpha" />
-				<feGaussianBlur stdDeviation="6" result="blur" />
-				<feFlood flood-color="#7a879d" flood-opacity="0.102" />
-				<feComposite operator="in" in2="blur" />
-				<feComposite in="SourceGraphic" />
-			</filter>
-		</defs>
-		<g id="paypal" transform="translate(18 16)">
-			<g
-				transform="matrix(1, 0, 0, 1, -18, -16)"
-				filter="url(#Background)"
-			>
-				<rect
-					id="Background-2"
-					data-name="Background"
-					width="78"
-					height="50"
-					rx="8"
-					transform="translate(18 16)"
-					fill="#fff"
-				/>
-			</g>
-			<g id="paypal-seeklogo.com" transform="translate(-6.619 14.132)">
-				<path
-					id="Path_11514"
-					data-name="Path 11514"
-					d="M317.622,385.13c1.961,0,3.77,1.063,3.522,3.712-.3,3.148-1.987,4.89-4.65,4.9h-2.326c-.334,0-.5.273-.583.832l-.45,2.859c-.067.432-.289.645-.616.645h-2.165c-.345,0-.465-.22-.388-.714l1.786-11.459c.089-.564.3-.774.686-.774h5.181Zm-3.525,6.135h1.762c1.1-.042,1.834-.805,1.908-2.181a1.331,1.331,0,0,0-1.443-1.454l-1.659.007-.568,3.628Zm12.931,5.934c.2-.18.4-.273.37-.051l-.07.531c-.036.277.073.424.331.424h1.923c.324,0,.481-.13.561-.631l1.185-7.433c.06-.373-.032-.556-.315-.556H328.9c-.19,0-.284.106-.333.4l-.078.457c-.04.238-.15.28-.252.04-.358-.849-1.273-1.229-2.55-1.2a5.291,5.291,0,0,0-5.179,5.2,3.573,3.573,0,0,0,3.543,3.984,3.8,3.8,0,0,0,2.985-1.155h0Zm-1.611-1.144a1.932,1.932,0,0,1-1.982-2.265,2.76,2.76,0,0,1,2.655-2.265,1.932,1.932,0,0,1,1.982,2.265,2.759,2.759,0,0,1-2.655,2.265Zm9.675-6.6h-1.95c-.4,0-.565.3-.438.669l2.421,7.085-2.375,3.372c-.2.282-.045.538.236.538h2.191a.671.671,0,0,0,.651-.319l7.446-10.675c.229-.328.121-.673-.255-.673h-2.075c-.356,0-.5.141-.7.436l-3.1,4.5-1.388-4.508a.594.594,0,0,0-.657-.423Z"
-					transform="translate(-294.323 -382.259)"
-					fill="#113984"
-					fill-rule="evenodd"
-				/>
-				<path
-					id="Path_11515"
-					data-name="Path 11515"
-					d="M540.291,385.113c1.96,0,3.77,1.063,3.522,3.714-.3,3.15-1.987,4.893-4.65,4.9h-2.325c-.335,0-.5.273-.584.833l-.45,2.86c-.067.432-.289.645-.617.645h-2.164c-.345,0-.465-.22-.389-.714l1.79-11.467c.088-.564.3-.774.685-.774h5.181Zm-3.525,6.138h1.762c1.1-.042,1.834-.806,1.908-2.182a1.331,1.331,0,0,0-1.443-1.455l-1.659.008-.568,3.63Zm12.931,5.937c.2-.18.4-.273.37-.051l-.071.531c-.036.277.074.424.332.424h1.923c.324,0,.481-.13.561-.631L554,390.024c.06-.374-.031-.557-.315-.557H551.57c-.19,0-.283.106-.333.4l-.078.458c-.04.238-.15.281-.252.041-.358-.849-1.274-1.23-2.55-1.2a5.293,5.293,0,0,0-5.179,5.2,3.574,3.574,0,0,0,3.543,3.985,3.8,3.8,0,0,0,2.985-1.155h0Zm-1.609-1.145a1.933,1.933,0,0,1-1.982-2.267,2.761,2.761,0,0,1,2.655-2.266,1.932,1.932,0,0,1,1.981,2.266,2.76,2.76,0,0,1-2.655,2.267Zm8.869,2.061h-2.22a.263.263,0,0,1-.272-.3l1.95-12.354a.382.382,0,0,1,.369-.3H559a.263.263,0,0,1,.272.3l-1.95,12.354a.383.383,0,0,1-.369.3Z"
-					transform="translate(-484.23 -382.242)"
-					fill="#009ee3"
-					fill-rule="evenodd"
-				/>
-			</g>
-		</g>
-	</svg>
-</ng-template>
 <ng-template #visa>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
@@ -172,6 +125,7 @@
 		</g>
 	</svg>
 </ng-template>
+
 <ng-template #apple>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"

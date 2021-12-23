@@ -1,3 +1,4 @@
+import { CardToken } from './../../models/Card.type'
 import { CheckOutService } from './../../services/check-out.service'
 import { Component, OnInit } from '@angular/core'
 import { Title } from '@angular/platform-browser'
@@ -33,11 +34,14 @@ export class ConfirmPaymentComponent implements OnInit {
 
 	buyerDetails: BuyerDetails | any = {}
 
+	cardToken: CardToken | any = {} as any
+
 	ngOnInit(): void {
 		this.title.setTitle(`Make payment for ${this.product.product_name}`)
 	}
 
 	makePayment() {
+		this.buyerDetails['card_token'] = this.cardToken
 		this.service
 			.create(this.buyerDetails)
 			.subscribe((buyerDetails: BuyerDetails) => {
