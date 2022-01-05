@@ -7,7 +7,6 @@ export type Product = {
 	user_id: number
 	variants?: string | any
 	discounted_price?: number
-
 	url?: string
 	photos?: any
 	is_sold_out?: boolean
