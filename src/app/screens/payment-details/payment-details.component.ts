@@ -48,7 +48,7 @@ export class PaymentDetailsComponent implements OnInit {
 	getProduct(slug: string): void {
 		this.service.show(slug).subscribe((product: Product) => {
 			this.product = product
-			this.title.setTitle(sentincify(product.product_name))
+			this.title.setTitle(sentincify(product.name))
 		})
 	}
 

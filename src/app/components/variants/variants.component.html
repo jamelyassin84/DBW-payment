@@ -1,13 +1,13 @@
-<div *ngFor="let item of variants">
-	<div class="variant title">{{ item.variant }} :</div>
+<div *ngFor="let item of variantArray">
+	<div class="variant title">{{ item[0].name }} :</div>
 	<div class="variant-container">
 		<div
 			class="title variants"
 			[ngClass]="{ active: types.includes(type) }"
-			*ngFor="let type of item.variants; let i = index"
-			(click)="selectVariant(type, item.variant)"
+			*ngFor="let type of item; let i = index"
+			(click)="selectVariant(type, item[0].name)"
 		>
-			{{ type }}
+			{{ type.value }}
 		</div>
 	</div>
 </div>

@@ -1,5 +1,5 @@
 export type Product = {
-	product_name: string
+	name: string
 	brief_description: string
 	description: string
 	currency: string
@@ -8,7 +8,7 @@ export type Product = {
 	variants?: string | any
 	discounted_price?: number
 
-	'image-url'?: string
+	url?: string
 	photos?: any
 	is_sold_out?: boolean
 	slug?: string

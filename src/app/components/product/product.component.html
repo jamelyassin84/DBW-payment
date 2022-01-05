@@ -5,7 +5,7 @@
 		<div class="brief-description muted">{{ brief_description }}</div>
 		<div class="price-and-size-container">
 			<div *ngFor="let variant of variants" class="size title">
-				{{ variant.variant }} : {{ variant.variants }}
+				{{ variant.name }} : {{ variant.value.value }}
 			</div>
 			<span class="price title">
 				{{ currency }} {{ price | currency }}

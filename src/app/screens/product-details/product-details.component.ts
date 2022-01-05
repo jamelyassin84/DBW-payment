@@ -31,8 +31,7 @@ export class ProductDetailsComponent implements OnInit {
 	getProduct(slug: string): void {
 		this.service.show(slug).subscribe((product: Product) => {
 			this.product = product
-			this.image = product['image-url']
-			this.product.variants = JSON.parse(product.variants)
+			this.image = product['url']
 			setInterval(() => {
 				this.title.setTitle(
 					`${this.AppTitle}  | ${sentincify(product.slug)}`

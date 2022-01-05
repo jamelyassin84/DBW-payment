@@ -5,7 +5,7 @@
 				<img class="big-img w-100" [src]="image" alt="" />
 				<app-carousel
 					(onSelect)="changeImage($event)"
-					[first]="product['image-url']"
+					[first]="product['url']"
 					[images]="product.photos"
 				></app-carousel>
 

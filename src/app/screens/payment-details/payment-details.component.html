@@ -1,8 +1,8 @@
 <div class="screen">
 	<app-product
 		*ngIf="product !== undefined"
-		[image]="product['image-url']"
-		[title]="product.product_name"
+		[image]="product.url"
+		[title]="product.name"
 		[brief_description]="product.brief_description"
 		[currency]="product.currency"
 		[variants]="chosenVariants"
