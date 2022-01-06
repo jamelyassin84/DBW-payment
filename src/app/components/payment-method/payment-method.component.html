@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" [class.outlined]="isActive">
 	<div [ngTemplateOutlet]="svg"></div>
 
 	<span *ngIf="isActive" class="isActive">

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { ActivatedRoute, Router } from '@angular/router'
+import { Alert, Fire } from 'src/app/constants/Alert'
 import { sentincify } from 'src/app/constants/helpers'
 import { BuyerDetails } from 'src/app/models/BuyerDetails.type'
 import { Product } from 'src/app/models/Product.type'
@@ -53,6 +54,18 @@ export class PaymentDetailsComponent implements OnInit {
 	}
 
 	submitForm() {
+		for (let key in this.buyerDetails) {
+			if (
+				this.buyerDetails[key] === '' ||
+				this.buyerDetails[key] === null
+			) {
+				return Alert(
+					'Missing Fields',
+					'One or more fields Should not be empty',
+					'error'
+				)
+			}
+		}
 		this.buyerDetails.product = this.product
 		this.buyerDetails.chosenVariants = this.chosenVariants
 		this.router.navigate(['/confirm-payment'], { state: this.buyerDetails })
