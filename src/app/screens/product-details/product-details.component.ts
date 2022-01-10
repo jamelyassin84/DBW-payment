@@ -1,9 +1,12 @@
 import { ProductsService } from './../../services/products.service'
-import { Component, OnInit } from '@angular/core'
+import { Component, Inject, OnInit } from '@angular/core'
 import { Product } from 'src/app/models/Product.type'
 import { ActivatedRoute, Router } from '@angular/router'
 import { Title } from '@angular/platform-browser'
 import { sentincify } from 'src/app/constants/helpers'
+import { CheckOutService } from 'src/app/services/check-out.service'
+import { DOCUMENT } from '@angular/common'
+import { Alert } from 'src/app/constants/Alert'
 
 @Component({
 	selector: 'app-product-details',
@@ -15,7 +18,9 @@ export class ProductDetailsComponent implements OnInit {
 		private service: ProductsService,
 		private route: ActivatedRoute,
 		private title: Title,
-		private router: Router
+		private router: Router,
+		private checkOutService: CheckOutService,
+		@Inject(DOCUMENT) private document: Document
 	) {}
 
 	product: Product | undefined | any = undefined
@@ -54,13 +59,29 @@ export class ProductDetailsComponent implements OnInit {
 		this.product.chosenVariants = variants
 	}
 
-	next() {
+	isProcessing = false
+	makePayment() {
 		let data: any = {
-			slug: this.product.slug
+			slug: this.product.slug,
+			product: this.product
 		}
 		if (this.product.chosenVariants) {
 			data.chosenVariants = this.product.chosenVariants
 		}
-		this.router.navigate(['/payment-details'], { state: data })
+		this.isProcessing = true
+		this.checkOutService.create(data).subscribe(
+			(checkOut: any) => {
+				this.isProcessing = false
+				this.document.location.href = checkOut.redirect_url
+			},
+			() => {
+				this.isProcessing = false
+				Alert(
+					'Something went wrong!',
+					'Try Again in a few seconds. ',
+					'error'
+				)
+			}
+		)
 	}
 }

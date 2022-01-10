@@ -39,8 +39,28 @@
 						{{ product.description }}
 					</div>
 
-					<button (click)="next()" class="btn btn-primary">
-						Next
+					<button
+						[disabled]="isProcessing"
+						(click)="makePayment()"
+						class="btn btn-primary"
+					>
+						<div
+							*ngIf="isProcessing"
+							class="spinner-grow spinner-grow-sm mr-1"
+							role="status"
+						></div>
+						<div
+							*ngIf="isProcessing"
+							class="spinner-grow spinner-grow-sm mr-1"
+							role="status"
+						></div>
+						<div
+							*ngIf="isProcessing"
+							class="spinner-grow spinner-grow-sm mr-3"
+							role="status"
+						></div>
+						<span *ngIf="isProcessing">Redirecting..</span>
+						<span *ngIf="!isProcessing">Make Payment</span>
 					</button>
 				</div>
 			</div>
