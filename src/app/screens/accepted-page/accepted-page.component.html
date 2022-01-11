@@ -1,15 +1,34 @@
 <div class="screen">
+	<div *ngIf="!data" class="spinner-grow text-primary"></div>
 	<div class="image">
-		<img
-			src="../../../assets/images/connfirm-payment/success-icon.png"
-			alt=""
-		/>
+		<img [src]="data.product.url" alt="" />
 	</div>
-	<div class="congratulations">Congratulations your order is accepted!</div>
-	<div class="desc">
-		Lorem Ipsum is simply dummy text of the printing and typesetting
-		industry
+	<div class="congratulations">
+		Hi! {{ resolveName(data.buyer.name) }} your {{ data.product.name }} has
+		been successfully ordered.
+	</div>
+	<div class="desc mt-5">
+		You have successfully transferred the payment to {{ data.seller.name }}
+	</div>
+	<div class="desc mt-5 text-left">
+		<div>Product: {{ data.product.name }}</div>
+		<div>Currency: {{ data.product.currency }}</div>
+		<div>Amount: {{ data.product.price }}</div>
+		<div>Reference Number: {{ data.payment.tran_ref }}</div>
+		<div>Card: {{ data.payment.payment_info.payment_description }}</div>
+		<div>Card Type: {{ data.payment.payment_info.card_type }}</div>
+		<div>Card Scheme: {{ data.payment.payment_info.card_scheme }}</div>
+		<div>Shipping Country: {{ data.payment.customer_details.country }}</div>
+		<div>City:{{ data.payment.customer_details.city }}</div>
+		<div>Address: {{ data.payment.customer_details.street1 }}</div>
 	</div>
 
-	<button (click)="close()" class="btn btn-primary">Thank you</button>
+	<button
+		*ngIf="data"
+		style="margin-top: 59px"
+		(click)="close()"
+		class="btn btn-primary"
+	>
+		Thank you
+	</button>
 </div>

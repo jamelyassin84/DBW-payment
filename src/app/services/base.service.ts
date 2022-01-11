@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Inject, Injectable, Optional } from '@angular/core'
+import { Observable } from 'rxjs'
 import { environment } from 'src/environments/environment'
 
 @Injectable({
@@ -26,31 +27,31 @@ export class BaseService {
 		}
 	}
 
-	paginate(url: string): any {
+	paginate(url: string): Observable<any> {
 		return this.http.get<any>(url, this.headers())
 	}
 
-	index(overload: String = ''): any {
+	index(overload: String = ''): Observable<any> {
 		const url = `${environment.api}${this.url}?${this.params}${overload}`
 		return this.http.get<any>(url, this.headers())
 	}
 
-	show(id: Number | string): any {
+	show(id: Number | string): Observable<any> {
 		const url = `${environment.api}${this.url}/${id}`
 		return this.http.get<any>(url, this.headers())
 	}
 
-	create(data: Object): any {
+	create(data: Object): Observable<any> {
 		const url = `${environment.api}${this.url}`
 		return this.http.post<any>(url, data, this.headers())
 	}
 
-	update(id: Number, data: Object): any {
+	update(id: Number, data: Object): Observable<any> {
 		const url = `${environment.api}${this.url}/${id}`
 		return this.http.patch<any>(url, data, this.headers())
 	}
 
-	destroy(id: Number) {
+	destroy(id: Number): Observable<any> {
 		const url = `${environment.api}${this.url}/${id}`
 		return this.http.delete<any>(url, this.headers())
 	}

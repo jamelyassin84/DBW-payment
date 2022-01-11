@@ -20,7 +20,6 @@ export class ProductDetailsComponent implements OnInit {
 		private service: ProductsService,
 		private route: ActivatedRoute,
 		private title: Title,
-		private router: Router,
 		private checkOutService: CheckOutService,
 		@Inject(DOCUMENT) private document: Document
 	) {}
@@ -73,7 +72,9 @@ export class ProductDetailsComponent implements OnInit {
 		this.isProcessing = true
 		this.checkOutService.create(data).subscribe(
 			(checkOut: any) => {
+				console.log(checkOut)
 				this.isProcessing = false
+				localStorage.setItem('tran_ref', checkOut.tran_ref)
 				this.document.location.href = checkOut.redirect_url
 			},
 			() => {
