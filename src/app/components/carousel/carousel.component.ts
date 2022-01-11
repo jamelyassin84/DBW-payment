@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
+import { listAnimation } from 'src/app/animations/List.animation'
 
 @Component({
 	selector: 'app-carousel',
 	templateUrl: './carousel.component.html',
-	styleUrls: ['./carousel.component.scss']
+	styleUrls: ['./carousel.component.scss'],
+	animations: [listAnimation]
 })
 export class CarouselComponent implements OnInit {
 	constructor() {}

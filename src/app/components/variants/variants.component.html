@@ -1,6 +1,7 @@
 <div *ngFor="let item of variantArray">
 	<div class="variant title">{{ item[0].name }} :</div>
-	<div class="variant-container">
+
+	<div [@listAnimation]="item.length" class="variant-container">
 		<div
 			class="title variants"
 			[ngClass]="{ active: types.includes(type) }"

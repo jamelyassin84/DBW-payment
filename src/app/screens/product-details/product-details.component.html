@@ -2,7 +2,12 @@
 	<div class="container" *ngIf="product !== undefined">
 		<div class="row">
 			<div class="col-md-12">
-				<img class="big-img w-100" [src]="image" alt="" />
+				<img
+					[@listAnimation]="2"
+					class="big-img w-100 animate slide-in-right"
+					[src]="image"
+					alt=""
+				/>
 				<app-carousel
 					(onSelect)="changeImage($event)"
 					[first]="product['url']"
@@ -59,7 +64,7 @@
 							class="spinner-grow spinner-grow-sm mr-3"
 							role="status"
 						></div>
-						<span *ngIf="isProcessing">Redirecting..</span>
+						<span *ngIf="isProcessing">Checking you out..</span>
 						<span *ngIf="!isProcessing">Make Payment</span>
 					</button>
 				</div>

@@ -7,11 +7,13 @@ import { sentincify } from 'src/app/constants/helpers'
 import { CheckOutService } from 'src/app/services/check-out.service'
 import { DOCUMENT } from '@angular/common'
 import { Alert } from 'src/app/constants/Alert'
+import { listAnimation } from 'src/app/animations/List.animation'
 
 @Component({
 	selector: 'app-product-details',
 	templateUrl: './product-details.component.html',
-	styleUrls: ['./product-details.component.scss']
+	styleUrls: ['./product-details.component.scss'],
+	animations: [listAnimation]
 })
 export class ProductDetailsComponent implements OnInit {
 	constructor(

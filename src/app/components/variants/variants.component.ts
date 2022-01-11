@@ -1,9 +1,11 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core'
+import { listAnimation } from 'src/app/animations/List.animation'
 import { groupByKey } from 'src/app/constants/helpers'
 @Component({
 	selector: 'app-variants',
 	templateUrl: './variants.component.html',
-	styleUrls: ['./variants.component.scss']
+	styleUrls: ['./variants.component.scss'],
+	animations: [listAnimation]
 })
 export class VariantsComponent implements OnInit {
 	constructor() {}
