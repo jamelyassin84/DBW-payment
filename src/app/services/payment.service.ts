@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class PaymentService extends BaseService {
 	constructor(private _http: HttpClient) {
-		super(_http, 'pay-tabs', '')
+		// super(_http, 'pay-tabs', '')
+		super(_http, 'stripe', '')
 	}
 }
