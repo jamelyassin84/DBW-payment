@@ -12,21 +12,19 @@
 	color: #130d25;
 	font-family: bold;
 	font-size: 23px;
-	padding: 0 calc(52px - 17px);
 	margin-bottom: 16px;
 }
 .desc {
 	line-height: 22px;
 	color: #727788;
 	font-size: 16px;
-	padding: 0 calc(48px - 17px);
 }
 
 .image {
 	margin-bottom: 40px;
 	img {
 		border-radius: 5%;
-		width: 248px;
+		width: 100%;
 		object-fit: cover;
 	}
 }

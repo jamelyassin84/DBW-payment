@@ -3,24 +3,25 @@
 	<div class="image">
 		<img [src]="data.product.url" alt="" />
 	</div>
-	<div class="congratulations">
-		Hi! {{ resolveName(data.buyer.name) }} your {{ data.product.name }} has
-		been successfully ordered.
-	</div>
-	<div class="desc mt-5">
-		You have successfully transferred the payment to {{ data.seller.name }}
+	<div class="congratulations text-left">
+		Your {{ data.product.name }} has been ordered.
 	</div>
 	<div class="desc mt-5 text-left">
-		<div>Product: {{ data.product.name }}</div>
-		<div>Currency: {{ data.product.currency }}</div>
-		<div>Amount: {{ data.product.price }}</div>
-		<div>Reference Number: {{ data.payment.tran_ref }}</div>
+		You have successfully transferred the payment to {{ data.seller.name }}
+	</div>
+	<div *ngIf="data" class="desc mt-5 text-left">
+		<div style="word-break: break-all">
+			<span class="title"> Ref:</span>
+			<br />
+			{{ data.summary.reference_number }}
+		</div>
+		<br />
+		<div>{{ data.product.name }}</div>
+		<div class="title">
+			{{ data.product.currency }} {{ data.product.price }}
+		</div>
+
 		<div>Card: {{ data.payment.payment_info.payment_description }}</div>
-		<div>Card Type: {{ data.payment.payment_info.card_type }}</div>
-		<div>Card Scheme: {{ data.payment.payment_info.card_scheme }}</div>
-		<div>Shipping Country: {{ data.payment.customer_details.country }}</div>
-		<div>City:{{ data.payment.customer_details.city }}</div>
-		<div>Address: {{ data.payment.customer_details.street1 }}</div>
 	</div>
 
 	<button
