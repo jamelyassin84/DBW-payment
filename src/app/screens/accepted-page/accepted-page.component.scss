@@ -9,14 +9,14 @@
 
 .congratulations {
 	line-height: 28px;
-	color: #130d25;
+	color: var(--color1);
 	font-family: bold;
 	font-size: 23px;
 	margin-bottom: 16px;
 }
 .desc {
 	line-height: 22px;
-	color: #727788;
+	color: var(--muted);
 	font-size: 16px;
 }
 

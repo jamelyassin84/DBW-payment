@@ -6,6 +6,7 @@ export type SuccessfulPayment = {
 	payment: Payment
 	product: Product
 	summary: Summary
+	chosen_variants: any
 }
 type Summary = {
 	amount: string

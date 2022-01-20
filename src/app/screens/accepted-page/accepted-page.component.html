@@ -3,13 +3,14 @@
 	<div class="image">
 		<img [src]="data.product.url" alt="" />
 	</div>
+	<div *ngIf="data" class="text-left alert alert-info text-bold">
+		You have successfully transferred the payment to {{ data.seller.name }}
+	</div>
 	<div class="congratulations text-left">
 		Your {{ data.product.name }} has been ordered.
 	</div>
-	<div class="desc mt-5 text-left">
-		You have successfully transferred the payment to {{ data.seller.name }}
-	</div>
-	<div *ngIf="data" class="desc mt-5 text-left">
+	<br />
+	<div *ngIf="data" class="desc text-left">
 		<div style="word-break: break-all">
 			<span class="title"> Ref:</span>
 			<br />
@@ -20,8 +21,15 @@
 		<div class="title">
 			{{ data.product.currency }} {{ data.product.price }}
 		</div>
-
-		<div>Card: {{ data.payment.payment_info.payment_description }}</div>
+		<div *ngFor="let variants of data.chosen_variants">
+			<br />
+			<div class="title">
+				{{ variants.variant.name }}
+			</div>
+			<div>
+				{{ variants.variant.value }}
+			</div>
+		</div>
 	</div>
 
 	<button
