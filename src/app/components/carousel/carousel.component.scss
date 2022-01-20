@@ -5,7 +5,7 @@
 	overflow: hidden;
 	padding-right: 0;
 	width: 100%;
-	overflow-y: auto;
+	overflow-x: auto;
 	display: inline-block;
 	img {
 		display: inline-block;
@@ -25,4 +25,22 @@
 
 .active {
 	border: 2px solid rgba($color: #2e70e6, $alpha: 1) !important;
+}
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+	cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--bg2);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--variants);
+	border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #888;
 }

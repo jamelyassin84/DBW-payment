@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="html" theme="light" lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<title>Rive</title>
@@ -18,6 +18,24 @@
 		/>
 	</head>
 	<body>
+		<script>
+			function setTheme() {
+				if (
+					window.matchMedia &&
+					window.matchMedia('(prefers-color-scheme: dark)').matches &&
+					localStorage.getItem('user') === null
+				) {
+					document
+						.getElementById('html')
+						.setAttribute('theme', 'dark')
+					return
+				}
+				document.getElementById('html').setAttribute('theme', 'light')
+			}
+			setInterval(() => {
+				setTheme()
+			}, 100)
+		</script>
 		<app-root></app-root>
 	</body>
 </html>
