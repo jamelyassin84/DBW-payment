@@ -6,6 +6,7 @@ import { ProductDetailsComponent } from './screens/product-details/product-detai
 import { StripeCancelPageComponent } from './screens/stripe/stripe-cancel-page/stripe-cancel-page.component'
 import { StripeRefreshPageComponent } from './screens/stripe/stripe-refresh-page/stripe-refresh-page.component'
 import { StripeSuccessPageComponent } from './screens/stripe/stripe-success-page/stripe-success-page.component'
+import { AcceptedPageComponent } from './screens/accepted-page/accepted-page.component'
 
 const routes: Routes = [
 	{
@@ -15,6 +16,10 @@ const routes: Routes = [
 	{
 		path: 'product-details/:id',
 		component: ProductDetailsComponent
+	},
+	{
+		path: 'order-has-been-accepted',
+		component: AcceptedPageComponent
 	},
 	{
 		path: 'onboard',
