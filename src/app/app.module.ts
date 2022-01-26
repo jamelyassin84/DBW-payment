@@ -17,6 +17,12 @@ import { DotsComponent } from './components/dots/dots.component'
 import { VariantsComponent } from './components/variants/variants.component'
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms'
+import { UnderMaintenanceComponent } from './screens/app-redirects/under-maintenance/under-maintenance.component'
+import { PageNotFoundComponent } from './screens/app-redirects/page-not-found/page-not-found.component'
+import { StripeRefreshPageComponent } from './screens/stripe/stripe-refresh-page/stripe-refresh-page.component'
+import { StripeCancelPageComponent } from './screens/stripe/stripe-cancel-page/stripe-cancel-page.component'
+import { StripeSuccessPageComponent } from './screens/stripe/stripe-success-page/stripe-success-page.component';
+import { NoInternetPageComponent } from './screens/app-redirects/no-internet-page/no-internet-page.component'
 
 @NgModule({
 	declarations: [
@@ -32,7 +38,13 @@ import { FormsModule } from '@angular/forms'
 		ProductComponent,
 		SizesComponent,
 		DotsComponent,
-		VariantsComponent
+		VariantsComponent,
+		UnderMaintenanceComponent,
+		PageNotFoundComponent,
+		StripeRefreshPageComponent,
+		StripeCancelPageComponent,
+		StripeSuccessPageComponent,
+  NoInternetPageComponent
 	],
 	imports: [
 		BrowserModule,
