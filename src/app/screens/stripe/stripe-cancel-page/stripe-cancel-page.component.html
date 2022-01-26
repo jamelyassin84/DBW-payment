@@ -1,1 +1,40 @@
-<p>stripe-cancel-page works!</p>
+<div class="screen">
+	<div class="container">
+		<div class="d-flex mobile-container">
+			<img src="../../../../assets/partner.svg" alt="" />
+			<br />
+			<h1>
+				Rive partners <br />
+				with Stripe.
+			</h1>
+			<br />
+			<h4>Just a few things needed for you to connect.</h4>
+
+			<div class="p-5 d-flex aic w-100">
+				<button
+					[disabled]="isProcessing"
+					(click)="withdraw()"
+					class="btn btn-primary"
+				>
+					<div
+						*ngIf="isProcessing"
+						class="spinner-grow spinner-grow-sm mr-1"
+						role="status"
+					></div>
+					<div
+						*ngIf="isProcessing"
+						class="spinner-grow spinner-grow-sm mr-1"
+						role="status"
+					></div>
+					<div
+						*ngIf="isProcessing"
+						class="spinner-grow spinner-grow-sm mr-3"
+						role="status"
+					></div>
+					<span *ngIf="isProcessing">Checking you out..</span>
+					<span *ngIf="!isProcessing">Connect & Withdraw</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
