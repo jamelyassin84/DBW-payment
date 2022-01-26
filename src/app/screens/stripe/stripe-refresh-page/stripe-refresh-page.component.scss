@@ -1,0 +1,25 @@
+.mobile-container {
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	img {
+		height: 30vh;
+		object-fit: contain;
+		margin-top: 3rem;
+	}
+
+	h1 {
+		color: #2e70e6;
+		font-weight: 900;
+		text-align: center;
+	}
+
+	h4 {
+		color: var(--color1);
+		opacity: 0.8;
+		text-align: center;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}

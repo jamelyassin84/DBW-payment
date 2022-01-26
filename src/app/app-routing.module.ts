@@ -21,7 +21,7 @@ const routes: Routes = [
 		component: StripeRefreshPageComponent
 	},
 	{
-		path: 'onboarding-needed',
+		path: 'onboarding-needed/:amount/:user',
 		component: StripeCancelPageComponent
 	},
 	{

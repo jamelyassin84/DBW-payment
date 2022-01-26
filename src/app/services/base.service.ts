@@ -10,7 +10,7 @@ export class BaseService {
 	constructor(
 		public http: HttpClient,
 		@Inject('url') public url: String = '',
-		@Inject('params') @Optional() public params: String
+		@Inject('params') @Optional() public params: String = ''
 	) {}
 
 	headers() {

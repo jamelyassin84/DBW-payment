@@ -72,7 +72,6 @@ export class ProductDetailsComponent implements OnInit {
 		this.isProcessing = true
 		this.checkOutService.create(data).subscribe(
 			(checkOut: any) => {
-				this.isProcessing = false
 				localStorage.setItem('tran_ref', checkOut.id)
 				this.document.location.href = checkOut.url
 			},

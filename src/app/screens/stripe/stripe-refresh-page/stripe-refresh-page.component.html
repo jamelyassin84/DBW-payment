@@ -1,1 +1,42 @@
-<p>stripe-refresh-page works!</p>
+<div class="screen">
+	<div class="container">
+		<div class="d-flex mobile-container">
+			<img src="../../../../assets/steps.svg" alt="" />
+			<br />
+			<h1>
+				Just a little <br />
+				bit more.
+			</h1>
+			<br />
+			<h4>We need you to complete extra steps to continue.</h4>
+
+			<div class="p-5 d-flex aic w-100">
+				<button
+					[disabled]="isProcessing"
+					(click)="onBoard()"
+					class="btn btn-primary"
+				>
+					<div
+						*ngIf="isProcessing"
+						class="spinner-grow spinner-grow-sm mr-1"
+						role="status"
+					></div>
+					<div
+						*ngIf="isProcessing"
+						class="spinner-grow spinner-grow-sm mr-1"
+						role="status"
+					></div>
+					<div
+						*ngIf="isProcessing"
+						class="spinner-grow spinner-grow-sm mr-3"
+						role="status"
+					></div>
+					<span *ngIf="isProcessing"
+						>Continue Stripe Onboarding..</span
+					>
+					<span *ngIf="!isProcessing">Continue Onboarding</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
